@@ -23,20 +23,20 @@ spec:
       serviceAccountName: {{ template "jitsi-meet.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      volumes:
-      - name:  jitsi-tls
-        secret:
-          secretName: jitsi-tls-cert
+      # volumes:
+      # - name:  jitsi-tls
+      #   secret:
+      #     secretName: jitsi-tls-cert
       containers:
         - name: {{ include "jitsi-meet.name-web" . }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.web.image.repository }}:{{ .Values.web.image.tag }}"
           imagePullPolicy: {{ .Values.web.image.pullPolicy }}
-          volumeMounts:
-          - name: jitsi-tls
-            readOnly: true
-            mountPath: "/config/keys" 
+          # volumeMounts:
+          # - name: jitsi-tls
+          #   readOnly: true
+          #   mountPath: "/config/keys" 
           env:
             - name: XMPP_GUEST_DOMAIN
               value: guest.meet.jitsi
