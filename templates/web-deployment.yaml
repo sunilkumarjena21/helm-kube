@@ -55,7 +55,7 @@ spec:
             # - name: LETSENCRYPT_EMAIL
             #   value: kubecode@gmail.com
             - name: PUBLIC_URL
-              value: https://jitcore.cloudnetes.ml
+              value: {{ .Values.publicUrl }}
             # - name: LETSENCRYPT_DOMAIN 
             #   value: jitcore.cloudnetes.ml
             - name: XMPP_DOMAIN

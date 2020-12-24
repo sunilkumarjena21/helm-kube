@@ -5,8 +5,9 @@
 image:
   pullSecrets: []
 
-webHost: jitcore.cloudnetes.ml
-
+webHost: connectlane.co.in
+publicUrl: https://jitsi.connectlane.co.in
+dockerHost: 20.193.128.37
 web:
   image:
     repository: jitsi/web

@@ -42,7 +42,7 @@ spec:
           {{- end }}
           env:
             - name: DOCKER_HOST_ADDRESS
-              value: 20.193.128.37
+              value: {{ .Values.dockerHost }}
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
             - name: TZ
@@ -74,7 +74,7 @@ spec:
             - name: JVB_AUTH_USER
               value: {{ $root.Values.jvb.userAuth.name }}
             - name: PUBLIC_URL
-              value: https://jitcore.cloudnetes.ml
+              value: {{ .Values.publicUrl }}
             - name: JVB_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
