@@ -38,13 +38,13 @@ web:
         cert-manager.io/cluster-issuer: letsencrypt
         nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
-      - host: jitcore.cloudnetes.ml
+      - host: jitsi.connectlane.co.in
         oauth: false
         paths: [/]
     tls:
     - hosts:
-        - jitcore.cloudnetes.ml
-      secretName: jitcore-cloudnetes-ml
+        - jitsi.connectlane.co.in
+      secretName: jitcore-connectlane-co-in
     resources: {}
   nodeSelector: {}
   tolerations: []
