@@ -7,7 +7,7 @@ image:
 
 webHost: connectlane.co.in
 publicUrl: https://jitsi.connectlane.co.in
-dockerHost: 20.197.48.243
+dockerHost: 20.193.152.19
 web:
   image:
     repository: jitsi/web
