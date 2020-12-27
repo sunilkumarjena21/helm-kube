@@ -36,7 +36,7 @@ web:
     annotations:
         kubernetes.io/ingress.class: nginx
         cert-manager.io/cluster-issuer: letsencrypt
-        nginx.org/websocket-services: "jitsi-meet-jvb-0"
+        nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
       - host: jitcore.connectlane.co.in
         oauth: false
