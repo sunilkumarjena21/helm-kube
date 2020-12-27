@@ -5,8 +5,8 @@
 image:
   pullSecrets: []
 
-webHost: edulane.info
-publicUrl: https://edulane.info
+webHost: cloudnetes.ml
+publicUrl: https://jitcore.cloudnetes.ml
 dockerHost: 20.193.152.19
 web:
   image:
@@ -38,13 +38,13 @@ web:
         cert-manager.io/cluster-issuer: letsencrypt
         nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
-      - host: edulane.info
+      - host: jitcore.cloudnetes.ml
         oauth: false
         paths: [/]
     tls:
     - hosts:
-        - edulane.info
-      secretName: edulane-info
+        - jitcore.cloudnetes.ml
+      secretName: jitcore-cloudnetes-ml
     resources: {}
   nodeSelector: {}
   tolerations: []
