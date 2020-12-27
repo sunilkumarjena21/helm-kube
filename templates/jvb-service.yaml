@@ -14,7 +14,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  type: NodePort
+  type: LoadBalancer
   # externalTrafficPolicy: Local
   # sessionAffinity: {{ $root.Values.jvb.service.sessionAffinity }}
   # {{- if $root.Values.jvb.service.sessionAffinityConfig }}
@@ -26,6 +26,11 @@ spec:
     protocol: UDP
     targetPort: video
     nodePort: {{ atoi $port }}
+  - port: 9090
+  # - port: 10000
+    protocol: TCP
+    targetPort: http-server
+    # nodePort: {{ atoi $port }}    
   selector:
     app.kubernetes.io/name: {{ $target | quote }}
     app.kubernetes.io/instance: {{ $root.Release.Name }}
