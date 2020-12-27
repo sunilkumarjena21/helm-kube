@@ -5,8 +5,8 @@
 image:
   pullSecrets: []
 
-webHost: cloudnetes.ml
-publicUrl: https://jitcore.cloudnetes.ml
+webHost: connectlane.co.in
+publicUrl: https://jitcore.connectlane.co.in
 dockerHost: 20.193.152.19
 web:
   image:
@@ -38,13 +38,13 @@ web:
         cert-manager.io/cluster-issuer: letsencrypt
         nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
-      - host: jitcore.cloudnetes.ml
+      - host: jitcore.connectlane.co.in
         oauth: false
         paths: [/]
     tls:
     - hosts:
-        - jitcore.cloudnetes.ml
-      secretName: jitcore-cloudnetes-ml
+        - jitcore.connectlane.co.in
+      secretName: jitcore-connectlane-co-in
     resources: {}
   nodeSelector: {}
   tolerations: []
