@@ -32,7 +32,7 @@ spec:
           imagePullPolicy: {{ .Values.prosody.image.pullPolicy }}
           env:
             - name: PUBLIC_URL
-              value: {{ .Values.publicUrl }}
+              value: {{ $root.Values.publicUrl }}
             - name: XMPP_GUEST_DOMAIN
               value: guest.meet.jitsi
             - name: ENABLE_XMPP_WEBSOCKET
