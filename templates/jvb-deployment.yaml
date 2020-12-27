@@ -43,6 +43,12 @@ spec:
           env:
             - name: DOCKER_HOST_ADDRESS
               value: {{ $root.Values.dockerHost }}
+            - name: WS_DOMAIN
+              value: {{ $root.Values.webHost }}
+            - name: WS_SERVER_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP                
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
             - name: TZ

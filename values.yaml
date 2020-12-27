@@ -5,7 +5,7 @@
 image:
   pullSecrets: []
 
-webHost: connectlane.co.in
+webHost: jitcore.connectlane.co.in
 publicUrl: https://jitcore.connectlane.co.in
 dockerHost: 20.193.152.19
 web:
