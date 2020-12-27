@@ -45,7 +45,7 @@ spec:
         {{- end }}
           - path: /xmpp-websocket
             backend:
-              serviceName: jitsi-meet-prosody
-              servicePort: 5280
+              serviceName: jitsi-meet-jvb-0
+              servicePort: 30300
   {{- end }}
 {{- end }}

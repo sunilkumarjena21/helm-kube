@@ -42,3 +42,6 @@ kubectl apply -f ClusterIssuer.yaml
 #to check the jicofo logs
 # kubectl logs -f jitsi-meet-prosody-0 jitsi-meet-jicofo -n jitsi
 
+#Entering into PODs
+# kubectl exec -it jitsi-meet-jvb-0-74ff4fd97b-6px5h -n jitsi bash
+
