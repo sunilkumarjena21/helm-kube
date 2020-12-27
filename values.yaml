@@ -5,8 +5,8 @@
 image:
   pullSecrets: []
 
-webHost: connectlane.co.in
-publicUrl: https://jitcore.connectlane.co.in
+webHost: edulane.info
+publicUrl: https://edulane.info
 dockerHost: 20.193.152.19
 web:
   image:
@@ -38,13 +38,13 @@ web:
         cert-manager.io/cluster-issuer: letsencrypt
         nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
-      - host: jitcore.connectlane.co.in
+      - host: edulane.info
         oauth: false
         paths: [/]
     tls:
     - hosts:
-        - jitcore.connectlane.co.in
-      secretName: jitcore-connectlane-co-in
+        - edulane.info
+      secretName: edulane-info
     resources: {}
   nodeSelector: {}
   tolerations: []
