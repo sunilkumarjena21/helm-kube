@@ -6,7 +6,7 @@ image:
   pullSecrets: []
 
 webHost: connectlane.co.in
-publicUrl: https://jitsi.connectlane.co.in
+publicUrl: https://jitcore.connectlane.co.in
 dockerHost: 20.193.152.19
 web:
   image:
@@ -38,12 +38,12 @@ web:
         cert-manager.io/cluster-issuer: letsencrypt
         nginx.org/websocket-services: "jitsi-meet-prosody"
     hosts:
-      - host: jitsi.connectlane.co.in
+      - host: jitcore.connectlane.co.in
         oauth: false
         paths: [/]
     tls:
     - hosts:
-        - jitsi.connectlane.co.in
+        - jitcore.connectlane.co.in
       secretName: jitcore-connectlane-co-in
     resources: {}
   nodeSelector: {}
@@ -158,4 +158,3 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
