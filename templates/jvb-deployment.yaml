@@ -114,9 +114,9 @@ spec:
             - name: tcp
               containerPort: 4443
               protocol: TCP
-            - name: http-server
-              containerPort: 9090
-              protocol: TCP              
+            # - name: http-server
+            #   containerPort: 9090
+            #   protocol: TCP              
           volumeMounts:
             - name: dockersock
               mountPath: "/var/run/docker.sock"
