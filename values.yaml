@@ -60,7 +60,7 @@ jibri:
 
 prosody:
   auth:
-    enabled: true
+    enabled: false
     guest: 1
     type: internal
   image:
@@ -102,11 +102,11 @@ jicofo: # jicofo is used as a sidecar container for every prosody instance
     tag: latest
     pullPolicy: Always
   environment: []
-  componentSecret: "YWRtaW4="
+  componentSecret: "7960b59ee8a1d40c0be645cd7097363c"
   userAuth:
-    enabled: true
+    enabled: false
     name: "focus"
-    secret: "YWRtaW4="
+    secret: "7960b59ee8a1d40c0be645cd7097363c"
   resources: {}
 
 jvb:
@@ -135,9 +135,9 @@ jvb:
   tolerations: []
   affinity: {}
   userAuth:
-    enabled: true
+    enabled: false
     name: "jvb"
-    secret: "YWRtaW4="
+    secret: "7960b59ee8a1d40c0be645cd7097363c"
 
 ingressControllerNamespace: ""
 
