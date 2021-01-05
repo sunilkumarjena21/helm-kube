@@ -1,46 +1,73 @@
 # helm-kube
-#deploy ingress (ingress-ngnix)
-# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.42.0/deploy/static/provider/cloud/deploy.yaml
+### deploy ingress (ingress-ngnix)
 
-#deploy cert manger (ingress-ngnix)
-# helm install \
+ ```sh
+ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.42.0/deploy/static/provider/cloud/deploy.yaml
+```
+### deploy cert manger (ingress-ngnix)
+
+```sh
+ helm install \
 cert-manager \
 --namespace ingress-nginx \
 --version v0.16.1 \
 --set installCRDs=true \
 --set nodeSelector."beta\.kubernetes\.io/os"=linux \
 jetstack/cert-manager
+```
+### deploy cluster issuer
 
-# deploy cluster issuer
+```sh
 kubectl apply -f ClusterIssuer.yaml
+```
+### Create the namespace
+```sh
+kubectl create ns jitsi
+```
+### install through helm
 
-#Create the namespace
-# kubectl create ns jitsi
+```sh
+helm install jitsi . --namespace jitsi
+```
+### upgrade through helm
 
-#install through helm
-# helm install jitsi . --namespace jitsi
+```sh
+helm upgrade jitsi . --namespace jitsi
+```
+### uninstall through helm
 
-#upgrade through helm
-# helm upgrade jitsi . --namespace jitsi
+```sh
+helm uninstall jitsi --namespace jitsi
+```
+### Check all PODs
 
-#uninstall through helm
-# helm uninstall jitsi --namespace jitsi
+```sh
+kubectl get po -n jitsi
+```
 
-#Check all PODs
-# kubectl get po -n jitsi
+### Restarting prosody PODs 
 
-#Restarting prosody PODs 
-# kubectl delete po jitsi-meet-prosody-0 -n jitsi
+```sh
+kubectl delete po jitsi-meet-prosody-0 -n jitsi
+```
 
-#Restating jbv PODs
-# kubectl delete po jitsi-meet-jvb-0-d844f869f-b6wh5 -n jitsi
+### Restating jbv PODs
 
-#to check the prosody logs
-# kubectl logs -f jitsi-meet-prosody-0 jitsi-meet-prosody -n jitsi
+```sh
+kubectl delete po jitsi-meet-jvb-0-d844f869f-b6wh5 -n jitsi
+```
+#### to check the prosody logs
 
-#to check the jicofo logs
-# kubectl logs -f jitsi-meet-prosody-0 jitsi-meet-jicofo -n jitsi
+```sh
+kubectl logs -f jitsi-meet-prosody-0 jitsi-meet-prosody -n jitsi
+```
+### to check the jicofo logs
 
-#Entering into PODs
-# kubectl exec -it jitsi-meet-jvb-0-74ff4fd97b-6px5h -n jitsi bash
+```sh
+kubectl logs -f jitsi-meet-prosody-0 jitsi-meet-jicofo -n jitsi
+```
+### Entering into PODs
 
+```sh
+kubectl exec -it jitsi-meet-jvb-0-74ff4fd97b-6px5h -n jitsi bash
+```
