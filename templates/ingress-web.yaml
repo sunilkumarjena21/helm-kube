@@ -43,9 +43,9 @@ spec:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
         {{- end }}
-          - path: /xmpp-websocket
+          - path: /colibri-ws
             backend:
-              serviceName: jitsi-meet-prosody
-              servicePort: 5280
+              serviceName: jitsi-meet-web
+              servicePort: 80
   {{- end }}
 {{- end }}
