@@ -28,7 +28,7 @@ web:
        cpu: 512m
        memory: 512Mi
   hpa:
-    enabled: false
+    enabled: true
     minReplicas: 1
     maxReplicas: 3
     metrics:
@@ -85,7 +85,7 @@ prosody:
       clientIPConfig:
         timeoutSeconds: 10800 # 3 hours
   hpa:
-    enabled: false
+    enabled: true
     minReplicas: 1
     maxReplicas: 3
     metrics:
@@ -149,7 +149,7 @@ jvb:
        cpu: 512m
        memory: 512Mi
   hpa:
-    enabled: false
+    enabled: true
     minReplicas: 1
     maxReplicas: 3
     metrics:
