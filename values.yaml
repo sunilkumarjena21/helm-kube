@@ -16,7 +16,7 @@ web:
   environment:
     - name: ENABLE_LETSENCRYPT
       value: false
-  replicaCount: 2
+  replicaCount: 1
   jwtsidecar:
     extraArgs: {}
     resources: {}
@@ -75,7 +75,7 @@ prosody:
     tag: latest
     pullPolicy: Always
   environment: []
-  replicaCount: 2
+  replicaCount: 1
   service:
     annotations: []
     type: ClusterIP
@@ -128,7 +128,7 @@ jvb:
     tag: latest
     pullPolicy: Always
   environment: []
-  replicaCount: 2
+  replicaCount: 1
   securityContext:
     fsGroup: 412
   podSecurityContext:
