@@ -20,6 +20,13 @@ web:
   jwtsidecar:
     extraArgs: {}
     resources: {}
+  resources:
+     limits:
+       cpu: 1024m
+       memory: 1024Mi
+     requests:
+       cpu: 512m
+       memory: 512Mi
   hpa:
     enabled: false
     minReplicas: 1
@@ -90,7 +97,13 @@ prosody:
         resource:
           name: cpu
           targetAverageUtilization: 70
-  resources: {}
+  resources:
+     limits:
+       cpu: 1024m
+       memory: 1024Mi
+     requests:
+       cpu: 512m
+       memory: 512Mi
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -128,6 +141,26 @@ jvb:
     type: ClusterIP
     # externalTrafficPolicy: Cluster
     # sessionAffinity: None
+  resources:
+     limits:
+       cpu: 1024m
+       memory: 1024Mi
+     requests:
+       cpu: 512m
+       memory: 512Mi
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 3
+    metrics:
+      - type: Resource
+        resource:
+          name: memory
+          targetAverageUtilization: 70
+      - type: Resource
+        resource:
+          name: cpu
+          targetAverageUtilization: 70
   ingress:
     enabled: false
   resources: {}
