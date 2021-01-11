@@ -1,0 +1,21 @@
+{{- if .Values.jvb.hpa.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "jitsi-meet.name-jvb" . }}
+  labels:
+{{ include "jitsi-meet.labels" . | indent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name:  {{ include "jitsi-meet.name-jvb" . }}
+  maxReplicas: {{ .Values.jvb.hpa.maxReplicas }}
+  minReplicas: {{ .Values.jvb.hpa.minReplicas }}
+  metrics:
+    {{- range .Values.jvb.hpa.metrics }}
+    - type: {{ .type }}
+      resource:
+        {{- toYaml .resource | nindent 8 }}
+    {{- end }}
+{{- end }}
