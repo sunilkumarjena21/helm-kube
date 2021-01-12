@@ -102,9 +102,9 @@ spec:
             # - name: JVB_PORT
             #   value: "10000"
             - name: JVB_TCP_PORT
-              value: "4443"
+              value: "9090"
             - name: JVB_TCP_MAPPED_PORT
-              value: "4443"
+              value: "9090"
                 
           ports:
             - name: video
@@ -112,7 +112,7 @@ spec:
               # containerPort: 10000
               protocol: UDP
             - name: tcp
-              containerPort: 4443
+              containerPort: 9090
               protocol: TCP
             # - name: http-server
             #   containerPort: 9090
